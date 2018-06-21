@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import {Table, Checkbox} from 'antd';
 import {connect} from 'react-redux';
 import {callEntitiesFilteredSelector, sorterSelector} from "../../store/Calls/selectors";
@@ -58,5 +59,11 @@ export class CallsTable extends Component {
         );
     };
 }
+
+PropTypes.propTypes = {
+    calls: PropTypes.arrayOf(PropTypes.object).isRequired,
+    sorter: PropTypes.object.isRequired,
+    sort: PropTypes.func.isRequired
+};
 
 export const CallsTableContainer = connect(mapStateToProps, mapDispatchToProps)(CallsTable);

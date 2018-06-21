@@ -5,6 +5,7 @@ import uuid from 'uuid';
 
 import { actions } from './../../store/Calls/actions';
 import {formatPhone} from "../../common/utils";
+import PropTypes from "prop-types";
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
     addCall: todo => dispatch(actions.calls.add(todo))
@@ -90,6 +91,11 @@ class CreateCall extends Component {
         );
     }
 }
+
+CreateCall.propTypes = {
+    form: PropTypes.object.isRequired,
+    addCall: PropTypes.func.isRequired
+};
 
 export const WrappedCreateCall = Form.create()(CreateCall);
 

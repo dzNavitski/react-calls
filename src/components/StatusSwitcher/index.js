@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {Radio} from 'antd';
 import {statusSelector} from "../../store/Calls/selectors";
 import {actions} from "../../store/Calls/actions";
+import PropTypes from "prop-types";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -29,5 +30,10 @@ export class StatusSwitcher extends Component {
         );
     };
 }
+
+StatusSwitcher.propTypes = {
+    status: PropTypes.string.isRequired,
+    changeStatus: PropTypes.func.isRequired
+};
 
 export const StatusSwitcherContainer = connect(mapStateToProps, mapDispatchToProps)(StatusSwitcher);

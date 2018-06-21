@@ -2,6 +2,7 @@ import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import {Card} from 'antd';
 import {nextCallSelector} from "../../store/Calls/selectors";
+import PropTypes from "prop-types";
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -21,6 +22,10 @@ const NextCallComponent = ({call}) => {
 
     return <div>No next call</div>
 
+};
+
+NextCallComponent.propTypes = {
+    call: PropTypes.object.isRequired
 };
 
 export const NextCall = connect(mapStateToProps, null)(NextCallComponent);
