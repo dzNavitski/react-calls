@@ -27,8 +27,6 @@ const styles = {
     }
 };
 
-
-
 class CreateCall extends Component {
     handleSubmit = (e) => {
         e.preventDefault();

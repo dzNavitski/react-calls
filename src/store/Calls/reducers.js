@@ -6,8 +6,6 @@ const defaultSorter = {columnKey: 'name', field: 'name', order: 'ascend'};
 
 export const initialState = {
     entities: [],
-    ids: [],
-    selected: [],
     status: 'all',
     sorter: defaultSorter
 };
@@ -23,8 +21,7 @@ export const callsReducer = handleActions(
                     entities: [
                         ...state.entities,
                         call
-                    ],
-                    ids: [...state.ids, call.id]
+                    ]
                 };
             }
         ],
